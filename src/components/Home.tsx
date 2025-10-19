@@ -6,9 +6,16 @@ export const Home = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Paper
-        variant="elevation"
+        variant="outlined"
         elevation={0}
-        sx={{ m: "auto", mt: "5px", width: "100%", padding: 1 }}
+        sx={{
+          width: "100%",
+          px: 2,
+          py: 1,
+          mt: 1,
+          borderRadius: 0,
+          fontFamily: "monospace",
+        }}
       >
         <Typography variant="h4">
           Hi, Welcome to ranadeep's cyber space!

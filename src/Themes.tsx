@@ -4,10 +4,10 @@ export const DarkTheme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#000000", // page background
-      paper: "#000000", // surfaces like AppBar, Cards, etc.
+      default: "#242124", // page background
+      paper: "#242124", // surfaces like AppBar, Cards, etc.
     },
-    primary: { main: "#32CD32" },
+    primary: { main: "#4CAF50" },
   },
   components: {
     MuiButton: {
@@ -15,7 +15,7 @@ export const DarkTheme = createTheme({
     },
     MuiTypography: {
       styleOverrides: {
-        root: { fontFamily: "monospace", color: "#32CD32" },
+        root: { fontFamily: "monospace", color: "#4CAF50" },
       },
     },
   },
