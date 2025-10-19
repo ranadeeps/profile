@@ -33,9 +33,9 @@ export const Navbar = () => {
 
           <Stack direction="row" spacing={2}>
             <CustomButton label="Home" href="/home" />
-            <CustomButton label="Experience" href="/experience" />
+            {/* <CustomButton label="Experience" href="/experience" /> */}
             <CustomButton label="Resume" href="/resume" />
-            <CustomButton label="Contact" href="/contact" />
+            {/* <CustomButton label="Contact" href="/contact" /> */}
           </Stack>
         </Stack>
 
@@ -47,9 +47,10 @@ export const Navbar = () => {
           sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
         >
           <CustomButton label="Home" href="/home" />
-          <CustomButton label="Experience" href="/experience" />
+          {/* <CustomButton label="Experience" href="/experience" /> */}
           <CustomButton label="Resume" href="/resume" />
-          <CustomButton label="More" href="/more" />
+          {/* <CustomButton label="Contact" href="/contact" /> */}
+          {/* <CustomButton label="More" href="/more" /> */}
         </Stack>
       </Paper>
     </ThemeProvider>
