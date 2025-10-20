@@ -8,6 +8,9 @@ export const DarkTheme = createTheme({
       paper: "#242124", // surfaces like AppBar, Cards, etc.
     },
     primary: { main: "#4CAF50" },
+    text: {
+      primary: "#4CAF50",
+    },
   },
   components: {
     MuiButton: {

@@ -10,10 +10,8 @@ export const Navbar = () => {
     <ThemeProvider theme={DarkTheme}>
       <Paper
         elevation={0}
-        variant="outlined"
         sx={{
           width: "100%",
-          px: 2,
           py: 1,
           mt: 1,
           borderRadius: 0,
@@ -33,7 +31,7 @@ export const Navbar = () => {
 
           <Stack direction="row" spacing={2}>
             <CustomButton label="Home" href="/home" />
-            {/* <CustomButton label="Experience" href="/experience" /> */}
+            <CustomButton label="Experience" href="/experience" />
             <CustomButton label="Resume" href="/resume" />
             {/* <CustomButton label="Contact" href="/contact" /> */}
           </Stack>
@@ -47,7 +45,7 @@ export const Navbar = () => {
           sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
         >
           <CustomButton label="Home" href="/home" />
-          {/* <CustomButton label="Experience" href="/experience" /> */}
+          <CustomButton label="Experience" href="/experience" />
           <CustomButton label="Resume" href="/resume" />
           {/* <CustomButton label="Contact" href="/contact" /> */}
           {/* <CustomButton label="More" href="/more" /> */}

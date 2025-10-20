@@ -6,11 +6,9 @@ export const Home = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Paper
-        variant="outlined"
         elevation={0}
         sx={{
           width: "100%",
-          px: 2,
           py: 1,
           mt: 1,
           borderRadius: 0,
