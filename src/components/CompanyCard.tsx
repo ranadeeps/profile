@@ -9,6 +9,13 @@ export const CompanyCard: React.FC<{
   designation: string;
   location: string;
 }> = (props) => {
+  const responsiveFontSize = {
+    xs: "0.8rem", // mobile
+    sm: "0.8rem", // tablet
+    md: "0.8rem", // small laptop
+    lg: "1rem", // desktop
+    xl: "1rem", // large screen
+  };
   const bull = (
     <Box
       component="span"
@@ -36,14 +43,39 @@ export const CompanyCard: React.FC<{
         >
           <CardContent>
             <Box display={"flex"} justifyContent={"space-between"}>
-              <Typography component="div" flexWrap={"wrap"} width={"50%"}>
+              <Typography
+                component="div"
+                flexWrap={"wrap"}
+                width={"50%"}
+                textAlign={"left"}
+                sx={{
+                  fontSize: responsiveFontSize,
+                }}
+              >
                 {props.companyName}
               </Typography>
 
-              <Typography component="div">{props.period}</Typography>
+              <Typography
+                component="div"
+                flexWrap={"wrap"}
+                width={"50%"}
+                textAlign={"right"}
+                sx={{
+                  fontSize: responsiveFontSize,
+                }}
+              >
+                {props.period}
+              </Typography>
             </Box>
 
-            <Typography sx={{ color: "text.primary" }}>
+            <Typography
+              textAlign={"left"}
+              sx={{
+                mt: 1,
+                color: "text.primary",
+                fontSize: responsiveFontSize,
+              }}
+            >
               {props.designation} {bull} {props.location}
             </Typography>
           </CardContent>
