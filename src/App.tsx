@@ -6,11 +6,13 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Resume } from "./components/Resume";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
     <Box
       display={"flex"}
+      height={"100vh"}
       flexDirection={"column"}
       sx={{
         width: { xs: "100%", sm: "100%", md: "80%", lg: "60%" },
@@ -30,6 +32,7 @@ function App() {
           <Route path="/resume" element={<Resume></Resume>}></Route>
         </Routes>
       </BrowserRouter>
+      <Footer></Footer>
     </Box>
   );
 }

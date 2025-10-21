@@ -9,10 +9,9 @@ export const Home = () => {
         elevation={0}
         sx={{
           width: "100%",
-          py: 1,
-          mt: 1,
           borderRadius: 0,
           fontFamily: "monospace",
+          flexGrow: 1,
         }}
       >
         <Typography variant="h4">

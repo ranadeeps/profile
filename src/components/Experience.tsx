@@ -14,6 +14,7 @@ export const Experience = () => {
           mt: 1,
           borderRadius: 0,
           fontFamily: "monospace",
+          flexGrow: 1,
         }}
       >
         <Box

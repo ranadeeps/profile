@@ -8,8 +8,10 @@ export const DarkTheme = createTheme({
       paper: "#242124", // surfaces like AppBar, Cards, etc.
     },
     primary: { main: "#4CAF50" },
+    secondary: { main: "#242124" },
     text: {
       primary: "#4CAF50",
+      secondary: "#242124",
     },
   },
   components: {
