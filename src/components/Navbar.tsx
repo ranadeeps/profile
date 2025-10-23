@@ -12,8 +12,7 @@ export const Navbar = () => {
         elevation={0}
         sx={{
           width: "100%",
-          py: 1,
-          mt: 1,
+          pb: 1,
           borderRadius: 0,
           fontFamily: "monospace",
         }}

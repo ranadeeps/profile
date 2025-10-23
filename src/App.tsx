@@ -7,8 +7,24 @@ import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Resume } from "./components/Resume";
 import { Footer } from "./components/Footer";
+import { getRequest } from "./utils/requests";
+import { useEffect } from "react";
 
 function App() {
+  const create_log = async () => {
+    try {
+      const referenceId = localStorage.getItem("referenceId");
+      const { data }: { data: any; error: any; message: any } =
+        await getRequest(`/analytics/create-log`, { referenceId: referenceId });
+      localStorage.setItem("referenceId", data.uuid);
+    } catch (error) {
+      console.error("Error in logging", error);
+    }
+  };
+
+  useEffect(() => {
+    create_log();
+  }, []);
   return (
     <Box
       display={"flex"}
