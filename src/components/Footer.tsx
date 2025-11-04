@@ -5,6 +5,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import CodeIcon from "@mui/icons-material/Code";
+import GitHubIcon from "@mui/icons-material/GitHub";
 export const Footer: React.FC = () => {
   const bull = (
     <Box
@@ -19,6 +21,7 @@ export const Footer: React.FC = () => {
       <Paper
         elevation={0}
         sx={{
+          mt: 1,
           width: "100%",
           borderRadius: 0,
           fontFamily: "monospace",
@@ -79,6 +82,12 @@ export const Footer: React.FC = () => {
             target="_blank"
           >
             <LinkedInIcon color="secondary" fontSize="small"></LinkedInIcon>
+          </IconButton>
+          <IconButton href="https://leetcode.com/u/Ranadeeps/" target="_blank">
+            <CodeIcon color="secondary" fontSize="small"></CodeIcon>
+          </IconButton>
+          <IconButton href="https://github.com/ranadeeps" target="_blank">
+            <GitHubIcon color="secondary" fontSize="small"></GitHubIcon>
           </IconButton>
         </Box>
       </Paper>

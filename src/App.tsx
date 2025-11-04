@@ -28,10 +28,11 @@ function App() {
   return (
     <Box
       display={"flex"}
-      height={"100vh"}
       flexDirection={"column"}
       sx={{
         width: { xs: "100%", sm: "100%", md: "80%", lg: "60%" },
+        minHeight: "100vh",
+        overflowY: "auto",
       }}
       margin={"auto"}
     >
