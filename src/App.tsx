@@ -33,6 +33,8 @@ function App() {
         width: { xs: "100%", sm: "100%", md: "80%", lg: "60%" },
         minHeight: "100vh",
         overflowY: "auto",
+        // backgroundImage: "url('/src/assets/bg_img.jpg')",
+        // backgroundSize: "cover",
       }}
       margin={"auto"}
     >

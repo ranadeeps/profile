@@ -1,6 +1,7 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, IconButton, Paper, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../Themes";
+import NearMeIcon from "@mui/icons-material/NearMe";
 import Marquee from "react-fast-marquee";
 
 export const Home = () => {
@@ -33,13 +34,18 @@ export const Home = () => {
         </Typography>
         <br />
         <Typography variant="body1" align="justify">
-          I'm an three year experienced backend developer in fintech industry
-          skilled at various backend technologies. I started my career as a
-          Software Engineer at CGI, worked as a full stack developer for 18
-          months and later joined WebileApps (A subsidiary of Kfin technologies
-          limited) as a Software Engineer and currently working here in
-          developing and supporting backend for fintech products.
+          I'm an experienced backend developer in fintech, skilled at various
+          backend technologies. I started my career as a Software Engineer at
+          CGI, worked as a full stack developer and currently at WebileApps (A
+          subsidiary of Kfin technologies limited) as a Software Engineer in
+          developing and supporting backend for fintech products. I like problem
+          solving and coding too
+          <IconButton href="https://leetcode.com/u/Ranadeeps/" target="_blank">
+            <NearMeIcon color="primary" fontSize="small"></NearMeIcon>
+          </IconButton>
+          .
         </Typography>
+
         <Typography variant="h4" mb={0}>
           Skills
         </Typography>
@@ -54,9 +60,7 @@ export const Home = () => {
                 mr: 1,
               }}
             >
-              <Typography variant="h6" fontStyle={"italic"}>
-                {skill}
-              </Typography>
+              <Typography variant="h6">{skill}</Typography>
             </Box>
           ))}
         </Marquee>
