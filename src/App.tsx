@@ -40,7 +40,12 @@ function App() {
     >
       <Navbar></Navbar>
       <Divider
-        sx={{ color: "primary.main", border: 1, borderWidth: 1 }}
+        sx={{
+          color: "primary.main",
+          border: 1,
+          borderWidth: 5,
+          borderRadius: 5,
+        }}
       ></Divider>
       <BrowserRouter>
         <Routes>
@@ -49,6 +54,7 @@ function App() {
           <Route path="/experience" element={<Experience></Experience>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/resume" element={<Resume></Resume>}></Route>
+          <Route path="/skills" element={<Resume></Resume>}></Route>
         </Routes>
       </BrowserRouter>
       <Footer></Footer>

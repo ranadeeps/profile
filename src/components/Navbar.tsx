@@ -38,16 +38,29 @@ export const Navbar = () => {
 
         {/* Mobile Navbar */}
         <Stack
-          direction="row"
+          direction="column"
           justifyContent="center"
-          spacing={1}
           sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
         >
-          <CustomButton label="Home" href="/home" />
-          <CustomButton label="Experience" href="/experience" />
-          <CustomButton label="Resume" href="/resume" />
-          {/* <CustomButton label="Contact" href="/contact" /> */}
-          {/* <CustomButton label="More" href="/more" /> */}
+          <Typography
+            variant="h6"
+            sx={{ whiteSpace: "nowrap" }}
+            textAlign={"center"}
+          >
+            RANADEEP REDDY SHYAMAKURA
+          </Typography>
+          <Stack
+            direction="row"
+            justifyContent="center"
+            spacing={1}
+            sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
+          >
+            <CustomButton label="Home" href="/home" />
+            <CustomButton label="Experience" href="/experience" />
+            <CustomButton label="Resume" href="/resume" />
+            {/* <CustomButton label="Contact" href="/contact" /> */}
+            {/* <CustomButton label="More" href="/more" /> */}
+          </Stack>
         </Stack>
       </Paper>
     </ThemeProvider>

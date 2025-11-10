@@ -3,18 +3,26 @@ import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../Themes";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import Marquee from "react-fast-marquee";
+import { SkillBox } from "./SkillBox";
+import { useNavigate } from "react-router";
 
 export const Home = () => {
+  const navigate = useNavigate();
   const skills = [
-    "Web Development",
-    "Node.js",
-    "Express.js",
-    "Typescript",
-    "Javascript",
-    "React",
-    "SQL",
-    "Oracle DB",
+    { name: "Web Development", rating: 8 },
+    { name: "Node.js", rating: 8 },
+    { name: "Express.js", rating: 9 },
+    { name: "Typescript", rating: 9 },
+    { name: "Javascript", rating: 7 },
+    { name: "React", rating: 6 },
+    { name: "SQL", rating: 7 },
+    { name: "Oracle DB", rating: 8 },
+    { name: "Java", rating: 6 },
+    { name: "Springboot", rating: 6 },
+    { name: "Python", rating: 7 },
+    { name: "AWS", rating: 6 },
   ];
+
   return (
     <ThemeProvider theme={DarkTheme}>
       <Paper
@@ -29,9 +37,7 @@ export const Home = () => {
           gap: 2,
         }}
       >
-        <Typography variant="h4">
-          Hi, Welcome to ranadeep's cyber space!
-        </Typography>
+        <Typography variant="h4">Hi, Welcome to my cyber space!</Typography>
         <br />
         <Typography variant="body1" align="justify">
           I'm an experienced backend developer in fintech, skilled at various
@@ -45,24 +51,31 @@ export const Home = () => {
           </IconButton>
           .
         </Typography>
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Typography variant="h4" mb={0}>
+            Skills
+          </Typography>
+          <Typography
+            variant="body2"
+            mb={0}
+            // sx={{ cursor: "pointer", color: "primary.main" }}
+            // onClick={() => navigate("/skills")}
+          >
+            View all
+          </Typography>
+        </Box>
 
-        <Typography variant="h4" mb={0}>
-          Skills
-        </Typography>
-        <Marquee pauseOnHover={true}>
-          {skills.map((skill: string) => (
-            <Box
-              sx={{
-                border: 1,
-                borderColor: "primary.main",
-                borderRadius: 0,
-                p: 0.5,
-                mr: 1,
-              }}
-            >
-              <Typography variant="h6">{skill}</Typography>
-            </Box>
-          ))}
+        <Marquee pauseOnHover={true} speed={100}>
+          {skills.map(
+            (skill: { name: string; rating: number }, index: number) => (
+              <SkillBox skill={skill} key={index}></SkillBox>
+            )
+          )}
         </Marquee>
       </Paper>
     </ThemeProvider>
