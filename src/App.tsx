@@ -45,6 +45,7 @@ function App() {
           border: 1,
           borderWidth: 5,
           borderRadius: 5,
+          mb: 1,
         }}
       ></Divider>
       <BrowserRouter>
