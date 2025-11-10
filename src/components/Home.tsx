@@ -4,10 +4,10 @@ import { DarkTheme } from "../Themes";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import Marquee from "react-fast-marquee";
 import { SkillBox } from "./SkillBox";
-import { useNavigate } from "react-router";
+//import { useNavigate } from "react-router";
 
 export const Home = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const skills = [
     { name: "Web Development", rating: 8 },
     { name: "Node.js", rating: 8 },
