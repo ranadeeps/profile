@@ -21,7 +21,6 @@ export const Footer: React.FC = () => {
       <Paper
         elevation={0}
         sx={{
-          mt: 1,
           width: "100%",
           borderRadius: 0,
           fontFamily: "monospace",

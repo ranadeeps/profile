@@ -9,6 +9,7 @@ import { Resume } from "./components/Resume";
 import { Footer } from "./components/Footer";
 import { getRequest } from "./utils/requests";
 import { useEffect } from "react";
+import { SkillPage } from "./components/SkillPage";
 
 function App() {
   const create_log = async () => {
@@ -32,20 +33,18 @@ function App() {
       sx={{
         width: { xs: "100%", sm: "100%", md: "80%", lg: "60%" },
         minHeight: "100vh",
-        overflowY: "auto",
         // backgroundImage: "url('/src/assets/bg_img.jpg')",
         // backgroundSize: "cover",
       }}
       margin={"auto"}
     >
       <Navbar></Navbar>
+
       <Divider
         sx={{
           color: "primary.main",
           border: 1,
           borderWidth: 5,
-          borderRadius: 5,
-          mb: 1,
         }}
       ></Divider>
       <BrowserRouter>
@@ -55,7 +54,7 @@ function App() {
           <Route path="/experience" element={<Experience></Experience>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/resume" element={<Resume></Resume>}></Route>
-          <Route path="/skills" element={<Resume></Resume>}></Route>
+          <Route path="/skills" element={<SkillPage></SkillPage>}></Route>
         </Routes>
       </BrowserRouter>
       <Footer></Footer>
