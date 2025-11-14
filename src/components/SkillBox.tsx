@@ -1,7 +1,7 @@
 import { Box, LinearProgress, Typography } from "@mui/material";
 
 export const SkillBox = (props: {
-  skill: { name: string; rating: number };
+  skill: { name: string; rating: number; experience: number };
 }) => {
   return (
     <Box
@@ -25,6 +25,9 @@ export const SkillBox = (props: {
           {props.skill.rating}/10
         </Typography>
       </Box>
+      <Typography variant="body1">
+        Experience: {props.skill.experience} Years
+      </Typography>
     </Box>
   );
 };

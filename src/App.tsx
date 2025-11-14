@@ -38,16 +38,16 @@ function App() {
       }}
       margin={"auto"}
     >
-      <Navbar></Navbar>
-
-      <Divider
-        sx={{
-          color: "primary.main",
-          border: 1,
-          borderWidth: 5,
-        }}
-      ></Divider>
       <BrowserRouter>
+        <Navbar></Navbar>
+
+        <Divider
+          sx={{
+            color: "primary.main",
+            border: 1,
+            borderWidth: 5,
+          }}
+        ></Divider>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>

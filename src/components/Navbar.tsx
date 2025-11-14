@@ -29,9 +29,9 @@ export const Navbar = () => {
           </Typography>
 
           <Stack direction="row" spacing={2}>
-            <CustomButton label="Home" href="/home" />
-            <CustomButton label="Experience" href="/experience" />
-            <CustomButton label="Resume" href="/resume" />
+            <CustomButton label="Home" href="./home" />
+            <CustomButton label="Experience" href="./experience" />
+            <CustomButton label="Resume" href="./resume" />
             {/* <CustomButton label="Contact" href="/contact" /> */}
           </Stack>
         </Stack>

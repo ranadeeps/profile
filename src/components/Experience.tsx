@@ -9,12 +9,16 @@ export const Experience = () => {
       <Paper
         elevation={0}
         sx={{
-          width: "100%",
-          py: 1,
-          mt: 1,
+          width: "auto",
           borderRadius: 0,
           fontFamily: "monospace",
           flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          px: { xs: 1, sm: 0 },
+          py: 1,
+          mt: 1,
         }}
       >
         <Box

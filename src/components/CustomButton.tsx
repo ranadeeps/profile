@@ -1,4 +1,5 @@
 import { Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router";
 
 export const CustomButton = (props: {
   label: string;
@@ -6,10 +7,17 @@ export const CustomButton = (props: {
   type?: "button" | "submit" | "reset" | undefined;
   onSubmit?: any;
 }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       {props.href ? (
-        <Button sx={{ padding: 0, margin: 0 }} href={props.href}>
+        <Button
+          sx={{ padding: 0, margin: 0 }}
+          onClick={() => {
+            navigate(props.href as string);
+          }}
+        >
           <Typography>{props.label}</Typography>
         </Button>
       ) : props.type ? (
