@@ -1,7 +1,7 @@
 import api from "./api";
 
 export interface ApiResponse<T> {
-  data: T | null;
+  data: T | null | any;
   message: string;
   error: string | any | null;
 }

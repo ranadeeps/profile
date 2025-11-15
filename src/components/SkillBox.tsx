@@ -17,6 +17,7 @@ export const SkillBox = (props: {
       <Typography variant="h6">{props.skill.name}</Typography>
       <Box display="flex" alignItems="center" gap={1}>
         <LinearProgress
+          aria-label="rating"
           variant="determinate"
           value={props.skill.rating * 10} // converts 0–10 to 0–100
           sx={{ width: "100%", height: 10, borderRadius: 5 }}

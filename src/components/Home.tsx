@@ -47,6 +47,7 @@ export const Home = () => {
             onClick={() => navigate("/experience")}
             target="_parent"
             size="large"
+            aria-label="view experience"
           >
             <NearMeIcon color="primary" fontSize="large" />
           </IconButton>
@@ -58,6 +59,7 @@ export const Home = () => {
             href="https://leetcode.com/u/Ranadeeps/"
             target="_blank"
             size="small"
+            aria-label="view leetcode profile"
           >
             <NearMeIcon color="primary" fontSize="small" />
           </IconButton>
@@ -92,6 +94,19 @@ export const Home = () => {
             )
           )}
         </Marquee>
+        <Typography variant="h3" align="justify">
+          Lets connect
+          <IconButton
+            href="#"
+            onClick={() => navigate("/connect")}
+            target="_parent"
+            size="large"
+            aria-label="lets connect"
+          >
+            <NearMeIcon color="primary" fontSize="large" />
+          </IconButton>
+          .
+        </Typography>
       </Paper>
     </ThemeProvider>
   );

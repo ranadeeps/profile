@@ -10,6 +10,7 @@ import { Footer } from "./components/Footer";
 import { getRequest } from "./utils/requests";
 import { useEffect } from "react";
 import { SkillPage } from "./components/SkillPage";
+import { Connect } from "./components/Connect";
 
 function App() {
   const create_log = async () => {
@@ -26,6 +27,7 @@ function App() {
   useEffect(() => {
     create_log();
   }, []);
+
   return (
     <Box
       display={"flex"}
@@ -55,9 +57,10 @@ function App() {
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/resume" element={<Resume></Resume>}></Route>
           <Route path="/skills" element={<SkillPage></SkillPage>}></Route>
+          <Route path="/connect" element={<Connect></Connect>}></Route>
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
-      <Footer></Footer>
     </Box>
   );
 }

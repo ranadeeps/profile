@@ -1,0 +1,100 @@
+<form>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Name"
+    // Apply the class from the imported styles object
+    // Optional: Add to remove autofill suggestions
+    autoComplete="off"
+  />
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Email"
+    // Apply the class from the imported styles object
+    // Optional: Add to remove autofill suggestions
+    autoComplete="off"
+  />
+  <textarea
+    id="message"
+    name="message"
+    rows={4}
+    placeholder="Message"
+  ></textarea>
+</form>
+
+
+
+/* Styling for all text/email/password input elements */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  /* 1. Base Styling */
+  width: 100%; /* Make it full width of its container */
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box; /* Padding won't increase the total width */
+
+  /* 2. Unfocused (Default) Border */
+  border: 1px solid #4CAF50; /* Subtle, light gray border */
+  border-radius: 4px; /* Slightly rounded corners */
+
+  /* 3. Smooth Transition */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 4. Focus State (Key Styling) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  /* CRITICAL: Remove the default browser outline */
+  outline: none;
+
+  /* Custom Border Color */
+  border-color: #4CAF50;
+
+  /* Optional: Add a subtle glow (box-shadow) for visual depth */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.4);
+}
+
+/* 5. Hover State (Optional) */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
+  /* Darken the border slightly on hover if not focused */
+  /* border-color: #999; */
+}
+
+
+/* Styling for the Textarea element */
+textarea {
+  /* 1. Base Styling */
+  width: 100%; /* Full width of container */
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: block;
+  box-sizing: border-box; 
+  resize: vertical; /* Allow resizing only vertically, not horizontally */
+
+  /* 2. Unfocused (Default) Border */
+  border: 1px solid #4CAF50; /* Subtle, light gray border */
+  border-radius: 4px; /* Slightly rounded corners */
+
+  /* 3. Smooth Transition */
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 4. Focus State (Key Styling) */
+textarea:focus {
+  /* CRITICAL: Remove the default browser outline */
+  outline: none;
+
+  /* Custom Border Color */
+  border-color: #4CAF50;
+
+  /* Optional: Add a subtle glow (box-shadow) for visual depth */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.4);
+}
