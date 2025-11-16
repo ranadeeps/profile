@@ -84,7 +84,7 @@ export const ContactForm = () => {
             <TextField
               id="my-input"
               label="Name"
-              slotProps={{ inputLabel: { sx: { color: "green" } } }}
+              slotProps={{ inputLabel: { sx: { color: "primary.main" } } }}
               variant="outlined"
               color="primary"
               name="name"
@@ -92,14 +92,14 @@ export const ContactForm = () => {
             <TextField
               id="my-input"
               label="Email"
-              slotProps={{ inputLabel: { sx: { color: "green" } } }}
+              slotProps={{ inputLabel: { sx: { color: "primary.main" } } }}
               variant="outlined"
               name="email"
             />
             <TextField
               id="outlined-multiline-static"
               label="Message"
-              slotProps={{ inputLabel: { sx: { color: "green" } } }}
+              slotProps={{ inputLabel: { sx: { color: "primary.main" } } }}
               multiline
               rows={4}
               name="message"
