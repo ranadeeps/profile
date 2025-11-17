@@ -15,14 +15,19 @@ export const ContactForm = () => {
   interface State {
     open: boolean;
     message: string;
+    severity: "success" | "error";
   }
   const [state, setState] = React.useState<State>({
     message: "",
     open: false,
+    severity: "success",
   });
-  const { message, open } = state;
-  const handleClick = (message: string) => {
-    setState({ message, open: true });
+  const { message, open, severity } = state;
+  const handleClick = (state: {
+    message: string;
+    severity: "success" | "error";
+  }) => {
+    setState({ message: state.message, open: true, severity: state.severity });
   };
   const handleClose = () => {
     setState({ ...state, open: false });
@@ -35,9 +40,9 @@ export const ContactForm = () => {
     console.log("on submit clicked", Object.fromEntries(data.entries()));
     const response = await postRequest("/profile/receive-message", payload);
     if (response.error) {
-      handleClick(response.message);
+      handleClick({ message: response.message, severity: "error" });
     } else {
-      handleClick(response.data.message);
+      handleClick({ message: response.data.message, severity: "success" });
     }
     form.reset();
   };
@@ -64,7 +69,7 @@ export const ContactForm = () => {
       >
         <Alert
           onClose={handleClose}
-          severity="success"
+          severity={severity}
           variant="filled"
           sx={{ width: "100%" }}
         >
@@ -82,27 +87,31 @@ export const ContactForm = () => {
         <FormControl sx={{ width: "100%" }}>
           <Stack direction={"column"} spacing={2} sx={{}}>
             <TextField
-              id="my-input"
+              id="name"
               label="Name"
               slotProps={{ inputLabel: { sx: { color: "primary.main" } } }}
               variant="outlined"
               color="primary"
               name="name"
+              required
             />
             <TextField
-              id="my-input"
+              id="email"
               label="Email"
               slotProps={{ inputLabel: { sx: { color: "primary.main" } } }}
               variant="outlined"
               name="email"
+              type="email"
+              required
             />
             <TextField
-              id="outlined-multiline-static"
+              id="message"
               label="Message"
               slotProps={{ inputLabel: { sx: { color: "primary.main" } } }}
               multiline
               rows={4}
               name="message"
+              required
             />
             <CustomButton label="Submit" type="submit"></CustomButton>
           </Stack>

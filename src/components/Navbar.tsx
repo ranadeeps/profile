@@ -8,61 +8,63 @@ import { CustomButton } from "./CustomButton";
 export const Navbar = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Paper
-        elevation={0}
-        sx={{
-          width: "100%",
-          pb: 1,
-          borderRadius: 0,
-          fontFamily: "monospace",
-        }}
-      >
-        {/* Desktop Navbar */}
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-          sx={{ display: { xs: "none", md: "flex" } }}
+      <nav>
+        <Paper
+          elevation={0}
+          sx={{
+            width: "100%",
+            pb: 1,
+            borderRadius: 0,
+            fontFamily: "monospace",
+          }}
         >
-          <Typography variant="h6" sx={{ whiteSpace: "nowrap" }}>
-            RANADEEP REDDY SHYAMAKURA
-          </Typography>
-
-          <Stack direction="row" spacing={2}>
-            <CustomButton label="Home" href="./home" />
-            <CustomButton label="Experience" href="./experience" />
-            <CustomButton label="Resume" href="./resume" />
-            {/* <CustomButton label="Contact" href="/contact" /> */}
-          </Stack>
-        </Stack>
-
-        {/* Mobile Navbar */}
-        <Stack
-          direction="column"
-          justifyContent="center"
-          sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
-        >
-          <Typography
-            variant="h6"
-            sx={{ whiteSpace: "nowrap" }}
-            textAlign={"center"}
-          >
-            RANADEEP REDDY SHYAMAKURA
-          </Typography>
+          {/* Desktop Navbar */}
           <Stack
             direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
+            <Typography variant="h6" sx={{ whiteSpace: "nowrap" }}>
+              RANADEEP REDDY SHYAMAKURA
+            </Typography>
+
+            <Stack direction="row" spacing={2}>
+              <CustomButton label="Home" href="./home" />
+              <CustomButton label="Experience" href="./experience" />
+              <CustomButton label="Resume" href="./resume" />
+              {/* <CustomButton label="Contact" href="/contact" /> */}
+            </Stack>
+          </Stack>
+
+          {/* Mobile Navbar */}
+          <Stack
+            direction="column"
             justifyContent="center"
-            spacing={1}
             sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
           >
-            <CustomButton label="Home" href="/home" />
-            <CustomButton label="Experience" href="/experience" />
-            <CustomButton label="Resume" href="/resume" />
-            {/* <CustomButton label="Contact" href="/contact" /> */}
-            {/* <CustomButton label="More" href="/more" /> */}
+            <Typography
+              variant="h6"
+              sx={{ whiteSpace: "nowrap" }}
+              textAlign={"center"}
+            >
+              RANADEEP REDDY SHYAMAKURA
+            </Typography>
+            <Stack
+              direction="row"
+              justifyContent="center"
+              spacing={1}
+              sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
+            >
+              <CustomButton label="Home" href="/home" />
+              <CustomButton label="Experience" href="/experience" />
+              <CustomButton label="Resume" href="/resume" />
+              {/* <CustomButton label="Contact" href="/contact" /> */}
+              {/* <CustomButton label="More" href="/more" /> */}
+            </Stack>
           </Stack>
-        </Stack>
-      </Paper>
+        </Paper>
+      </nav>
     </ThemeProvider>
   );
 };
