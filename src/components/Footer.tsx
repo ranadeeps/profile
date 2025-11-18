@@ -8,10 +8,27 @@ import EmailIcon from "@mui/icons-material/Email";
 import CodeIcon from "@mui/icons-material/Code";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useNavigate } from "react-router";
+import { getRequest } from "../utils/requests";
+import { useEffect, useState } from "react";
 
 export const Footer: React.FC = () => {
   const navigate = useNavigate();
+  const [visitors, setVisitors] = useState(0);
+  const [isLoading, setLoading] = useState(true);
+  const get_visitors = async () => {
+    try {
+      const { data }: { data: any; error: any; message: any } =
+        await getRequest(`/analytics/get-visitor-count`);
+      setVisitors(data.count);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error in logging", error);
+    }
+  };
 
+  useEffect(() => {
+    get_visitors();
+  }, []);
   const bull = (
     <Box
       component="span"
@@ -34,8 +51,12 @@ export const Footer: React.FC = () => {
         >
           <Box
             display={"flex"}
-            sx={{ flexDirection: { xs: "column", sm: "row" } }}
-            justifyContent={"center"}
+            sx={{
+              flexDirection: { xs: "column", sm: "row" },
+              justifyContent: "center",
+              alignItems: { xs: "start" },
+              px: 1,
+            }}
             pt={1}
           >
             <Box
@@ -96,8 +117,10 @@ export const Footer: React.FC = () => {
           <Box
             display={"flex"}
             flexDirection={"row"}
-            justifyContent={"center"}
-            pb={1}
+            sx={{
+              justifyContent: { xs: "start", sm: "center" },
+              px: 1,
+            }}
           >
             <IconButton
               href="https://www.instagram.com/ranadeepreddy_s_/"
@@ -120,6 +143,11 @@ export const Footer: React.FC = () => {
             <IconButton href="https://github.com/ranadeeps" target="_blank">
               <GitHubIcon color="secondary" fontSize="small"></GitHubIcon>
             </IconButton>
+          </Box>
+          <Box display={"flex"} flexDirection={"row"} justifyContent={"end"}>
+            <Typography color="secondary.main" mr={1}>
+              Total Visitors: {isLoading ? "... loading" : visitors}
+            </Typography>
           </Box>
         </Paper>
       </footer>
