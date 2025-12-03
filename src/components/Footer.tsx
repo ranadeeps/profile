@@ -144,7 +144,13 @@ export const Footer: React.FC = () => {
               <GitHubIcon color="secondary" fontSize="small"></GitHubIcon>
             </IconButton>
           </Box>
-          <Box display={"flex"} flexDirection={"row"} justifyContent={"end"}>
+          <Box
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"end"}
+            sx={{ cursor: "pointer" }}
+            onClick={() => navigate("/visitor-analytics")}
+          >
             <Typography color="secondary.main" mr={1}>
               Total Visitors: {isLoading ? "... loading" : visitors}
             </Typography>
