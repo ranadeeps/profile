@@ -31,7 +31,7 @@ export const Experience = () => {
             companyName="WebileApps India Pvt Ltd"
             designation="Software Engineer"
             location="Hyderabad, India"
-            period="Feb, 2025 - Present"
+            period="Feb, 2024 - Present"
           ></CompanyCard>
           <Divider
             orientation="vertical"

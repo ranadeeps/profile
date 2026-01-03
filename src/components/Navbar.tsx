@@ -4,8 +4,10 @@ import { ThemeProvider } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import { DarkTheme } from "../Themes";
 import { CustomButton } from "./CustomButton";
+import { useLocation } from "react-router";
 
 export const Navbar = () => {
+  const location = useLocation();
   return (
     <ThemeProvider theme={DarkTheme}>
       <nav>
@@ -30,9 +32,21 @@ export const Navbar = () => {
             </Typography>
 
             <Stack direction="row" spacing={2}>
-              <CustomButton label="Home" href="./home" />
-              <CustomButton label="Experience" href="./experience" />
-              <CustomButton label="Resume" href="./resume" />
+              <CustomButton
+                label="Home"
+                href="/home"
+                underline={location.pathname.includes("home")}
+              />
+              <CustomButton
+                label="Experience"
+                href="/experience"
+                underline={location.pathname.includes("experience")}
+              />
+              <CustomButton
+                label="Resume"
+                href="/resume"
+                underline={location.pathname.includes("resume")}
+              />
               {/* <CustomButton label="Contact" href="/contact" /> */}
             </Stack>
           </Stack>
@@ -56,9 +70,21 @@ export const Navbar = () => {
               spacing={1}
               sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
             >
-              <CustomButton label="Home" href="/home" />
-              <CustomButton label="Experience" href="/experience" />
-              <CustomButton label="Resume" href="/resume" />
+              <CustomButton
+                label="Home"
+                href="/home"
+                underline={location.pathname.includes("home")}
+              />
+              <CustomButton
+                label="Experience"
+                href="/experience"
+                underline={location.pathname.includes("experience")}
+              />
+              <CustomButton
+                label="Resume"
+                href="/resume"
+                underline={location.pathname.includes("resume")}
+              />
               {/* <CustomButton label="Contact" href="/contact" /> */}
               {/* <CustomButton label="More" href="/more" /> */}
             </Stack>
