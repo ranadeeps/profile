@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import { useNavigate } from "react-router";
 
 export const CustomButton = (props: {
@@ -13,26 +13,22 @@ export const CustomButton = (props: {
   return (
     <Box display={"flex"} flexDirection={"column"} margin={"auto"}>
       {props.href ? (
-        <Button
-          sx={{ padding: 0, margin: 0 }}
+        <button
           onClick={() => {
             navigate(props.href as string);
           }}
+          style={{ cursor: "pointer" }}
         >
           <Typography>{props.label}</Typography>
-        </Button>
+        </button>
       ) : props.type ? (
-        <Button
-          sx={{ padding: 0, margin: 0 }}
-          type={props.type}
-          variant="outlined"
-        >
+        <button type={props.type} style={{ cursor: "pointer" }}>
           <Typography>{props.label}</Typography>
-        </Button>
+        </button>
       ) : (
-        <Button sx={{ padding: 0, margin: 0 }}>
+        <button>
           <Typography>{props.label}</Typography>
-        </Button>
+        </button>
       )}
       {props.underline && (
         <Divider

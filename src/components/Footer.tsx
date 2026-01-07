@@ -120,6 +120,7 @@ export const Footer: React.FC = () => {
             sx={{
               justifyContent: { xs: "start", sm: "center" },
               px: 1,
+              alignItems: "center",
             }}
           >
             <IconButton
@@ -127,22 +128,62 @@ export const Footer: React.FC = () => {
               target="_blank"
             >
               <InstagramIcon color="secondary" fontSize="small"></InstagramIcon>
-            </IconButton>
+            </IconButton>{" "}
+            <Typography
+              color="secondary.main"
+              textAlign={"center"}
+              display={{ xs: "none", sm: "inline-block" }}
+            >
+              {" "}
+              {bull}{" "}
+            </Typography>
             <IconButton
               href="https://www.linkedin.com/in/ranadeep-reddy-0baa631b0/"
               target="_blank"
             >
               <LinkedInIcon color="secondary" fontSize="small"></LinkedInIcon>
             </IconButton>
+            <Typography
+              color="secondary.main"
+              textAlign={"center"}
+              display={{ xs: "none", sm: "inline-block" }}
+            >
+              {" "}
+              {bull}{" "}
+            </Typography>
             <IconButton
               href="https://leetcode.com/u/Ranadeeps/"
               target="_blank"
             >
               <CodeIcon color="secondary" fontSize="small"></CodeIcon>
             </IconButton>
+            <Typography
+              color="secondary.main"
+              textAlign={"center"}
+              display={{ xs: "none", sm: "inline-block" }}
+            >
+              {" "}
+              {bull}{" "}
+            </Typography>
             <IconButton href="https://github.com/ranadeeps" target="_blank">
               <GitHubIcon color="secondary" fontSize="small"></GitHubIcon>
             </IconButton>
+            <Typography
+              color="secondary.main"
+              textAlign={"center"}
+              display={{ xs: "none", sm: "inline-block" }}
+            >
+              {" "}
+              {bull}{" "}
+            </Typography>
+            <Typography color="secondary.main" textAlign={"center"}>
+              <Link
+                href="https://ranadeepreddyshyamakura.info/api/profile/download-resume"
+                color="secondary.main"
+              >
+                download resume
+              </Link>
+            </Typography>
           </Box>
           <Box
             display={"flex"}

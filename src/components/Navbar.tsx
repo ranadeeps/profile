@@ -1,7 +1,7 @@
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import { ThemeProvider } from "@mui/material/styles";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { DarkTheme } from "../Themes";
 import { CustomButton } from "./CustomButton";
 import { useLocation } from "react-router";
@@ -32,22 +32,29 @@ export const Navbar = () => {
             </Typography>
 
             <Stack direction="row" spacing={2}>
-              <CustomButton
-                label="Home"
-                href="/home"
-                underline={location.pathname.includes("home")}
-              />
-              <CustomButton
-                label="Experience"
-                href="/experience"
-                underline={location.pathname.includes("experience")}
-              />
-              <CustomButton
-                label="Resume"
-                href="/resume"
-                underline={location.pathname.includes("resume")}
-              />
-              {/* <CustomButton label="Contact" href="/contact" /> */}
+              <Box display={"flex"}>
+                <CustomButton
+                  label="Home"
+                  href="/home"
+                  underline={location.pathname.includes("home")}
+                />
+              </Box>
+
+              <Box display="flex">
+                <CustomButton
+                  label="Experience"
+                  href="/experience"
+                  underline={location.pathname.includes("experience")}
+                />
+              </Box>
+
+              <Box display="flex">
+                <CustomButton
+                  label="Resume"
+                  href="/resume"
+                  underline={location.pathname.includes("resume")}
+                />
+              </Box>
             </Stack>
           </Stack>
 
@@ -85,8 +92,6 @@ export const Navbar = () => {
                 href="/resume"
                 underline={location.pathname.includes("resume")}
               />
-              {/* <CustomButton label="Contact" href="/contact" /> */}
-              {/* <CustomButton label="More" href="/more" /> */}
             </Stack>
           </Stack>
         </Paper>
