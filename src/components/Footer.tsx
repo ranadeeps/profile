@@ -164,6 +164,9 @@ export const Footer: React.FC = () => {
               <Link
                 href="https://ranadeepreddyshyamakura.info/api/profile/download-resume"
                 color="secondary.main"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Download resume
               </Link>
