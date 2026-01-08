@@ -1,13 +1,11 @@
-import { Box, IconButton, Paper, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../Themes";
-import NearMeIcon from "@mui/icons-material/NearMe";
 import Marquee from "react-fast-marquee";
 import { SkillBox } from "./SkillBox";
-import { useNavigate } from "react-router";
+import NavigateButton from "./NavigateButton";
 
 export const Home = () => {
-  const navigate = useNavigate();
   const skills = [
     { name: "Web Development", rating: 8, experience: 3 },
     { name: "Node.js", rating: 8, experience: 2 },
@@ -42,29 +40,8 @@ export const Home = () => {
         <br />
         <Typography variant="h3" align="justify">
           I'm an experienced backend developer{" "}
-          <IconButton
-            href="#"
-            onClick={() => navigate("/experience")}
-            target="_parent"
-            size="large"
-            aria-label="view experience"
-          >
-            <NearMeIcon color="primary" fontSize="large" />
-          </IconButton>
-          .
         </Typography>
-        <Typography variant="body1" align="justify">
-          I like problem solving and coding too{" "}
-          <IconButton
-            href="https://leetcode.com/u/Ranadeeps/"
-            target="_blank"
-            size="small"
-            aria-label="view leetcode profile"
-          >
-            <NearMeIcon color="primary" fontSize="small" />
-          </IconButton>
-          .
-        </Typography>
+
         <Box
           display={"flex"}
           flexDirection={"row"}
@@ -74,14 +51,11 @@ export const Home = () => {
           <Typography variant="h4" mb={0}>
             Skills
           </Typography>
-          <Typography
-            variant="body2"
-            mb={0}
-            sx={{ cursor: "pointer", color: "primary.main" }}
-            onClick={() => navigate("/skills")}
-          >
-            View all
-          </Typography>
+          <NavigateButton
+            label="View all"
+            url="/skills"
+            textSize="xl"
+          ></NavigateButton>
         </Box>
 
         <Marquee pauseOnHover={true} speed={100}>
@@ -94,19 +68,11 @@ export const Home = () => {
             )
           )}
         </Marquee>
-        <Typography variant="h3" align="justify">
-          Lets connect
-          <IconButton
-            href="#"
-            onClick={() => navigate("/connect")}
-            target="_parent"
-            size="large"
-            aria-label="lets connect"
-          >
-            <NearMeIcon color="primary" fontSize="large" />
-          </IconButton>
-          .
-        </Typography>
+        <NavigateButton
+          label="Let's connect"
+          url="/connect"
+          textSize="2xl"
+        ></NavigateButton>
       </Paper>
     </ThemeProvider>
   );

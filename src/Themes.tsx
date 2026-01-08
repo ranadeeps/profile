@@ -20,7 +20,7 @@ export const DarkTheme = createTheme({
     },
     MuiTypography: {
       styleOverrides: {
-        root: { fontFamily: "monospace", color: "#4CAF50" },
+        root: { fontFamily: "monospace" },
       },
     },
   },
