@@ -129,11 +129,7 @@ export const Footer: React.FC = () => {
             >
               <InstagramIcon color="secondary" fontSize="small"></InstagramIcon>
             </IconButton>{" "}
-            <Typography
-              color="secondary.main"
-              textAlign={"center"}
-              display={{ xs: "none", sm: "inline-block" }}
-            >
+            <Typography color="secondary.main" textAlign={"center"}>
               {" "}
               {bull}{" "}
             </Typography>
@@ -143,11 +139,7 @@ export const Footer: React.FC = () => {
             >
               <LinkedInIcon color="secondary" fontSize="small"></LinkedInIcon>
             </IconButton>
-            <Typography
-              color="secondary.main"
-              textAlign={"center"}
-              display={{ xs: "none", sm: "inline-block" }}
-            >
+            <Typography color="secondary.main" textAlign={"center"}>
               {" "}
               {bull}{" "}
             </Typography>
@@ -157,22 +149,14 @@ export const Footer: React.FC = () => {
             >
               <CodeIcon color="secondary" fontSize="small"></CodeIcon>
             </IconButton>
-            <Typography
-              color="secondary.main"
-              textAlign={"center"}
-              display={{ xs: "none", sm: "inline-block" }}
-            >
+            <Typography color="secondary.main" textAlign={"center"}>
               {" "}
               {bull}{" "}
             </Typography>
             <IconButton href="https://github.com/ranadeeps" target="_blank">
               <GitHubIcon color="secondary" fontSize="small"></GitHubIcon>
             </IconButton>
-            <Typography
-              color="secondary.main"
-              textAlign={"center"}
-              display={{ xs: "none", sm: "inline-block" }}
-            >
+            <Typography color="secondary.main" textAlign={"center"}>
               {" "}
               {bull}{" "}
             </Typography>
@@ -181,7 +165,7 @@ export const Footer: React.FC = () => {
                 href="https://ranadeepreddyshyamakura.info/api/profile/download-resume"
                 color="secondary.main"
               >
-                download resume
+                Download resume
               </Link>
             </Typography>
           </Box>
