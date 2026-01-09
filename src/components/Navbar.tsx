@@ -3,8 +3,8 @@ import Paper from "@mui/material/Paper";
 import { ThemeProvider } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import { DarkTheme } from "../Themes";
-import { CustomButton } from "./CustomButton";
 import { useLocation } from "react-router";
+import NavbarButton from "./NavbarButton";
 
 export const Navbar = () => {
   const location = useLocation();
@@ -27,13 +27,11 @@ export const Navbar = () => {
             alignItems="center"
             sx={{ display: { xs: "none", md: "flex" } }}
           >
-            <Typography variant="h6" sx={{ whiteSpace: "nowrap" }}>
-              RANADEEP REDDY SHYAMAKURA
-            </Typography>
+            <p className="text-2xl">RANADEEP REDDY SHYAMAKURA</p>
 
             <Stack direction="row" spacing={2}>
               <Box display={"flex"}>
-                <CustomButton
+                <NavbarButton
                   label="Home"
                   href="/home"
                   underline={location.pathname.includes("home")}
@@ -41,7 +39,7 @@ export const Navbar = () => {
               </Box>
 
               <Box display="flex">
-                <CustomButton
+                <NavbarButton
                   label="Experience"
                   href="/experience"
                   underline={location.pathname.includes("experience")}
@@ -49,7 +47,7 @@ export const Navbar = () => {
               </Box>
 
               <Box display="flex">
-                <CustomButton
+                <NavbarButton
                   label="Resume"
                   href="/resume"
                   underline={location.pathname.includes("resume")}
@@ -77,17 +75,17 @@ export const Navbar = () => {
               spacing={1}
               sx={{ display: { xs: "flex", md: "none" }, mt: 0 }}
             >
-              <CustomButton
+              <NavbarButton
                 label="Home"
                 href="/home"
                 underline={location.pathname.includes("home")}
               />
-              <CustomButton
+              <NavbarButton
                 label="Experience"
                 href="/experience"
                 underline={location.pathname.includes("experience")}
               />
-              <CustomButton
+              <NavbarButton
                 label="Resume"
                 href="/resume"
                 underline={location.pathname.includes("resume")}

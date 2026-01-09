@@ -1,25 +1,25 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Paper } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../Themes";
-import Marquee from "react-fast-marquee";
-import { SkillBox } from "./SkillBox";
+// import Marquee from "react-fast-marquee";
+// import { SkillBox } from "./SkillBox";
 import NavigateButton from "./NavigateButton";
 
 export const Home = () => {
-  const skills = [
-    { name: "Web Development", rating: 8, experience: 3 },
-    { name: "Node.js", rating: 8, experience: 2 },
-    { name: "Express.js", rating: 9, experience: 2 },
-    { name: "Typescript", rating: 9, experience: 2 },
-    { name: "Javascript", rating: 7, experience: 2 },
-    { name: "React", rating: 6, experience: 1 },
-    { name: "SQL", rating: 7, experience: 2 },
-    { name: "Oracle DB", rating: 8, experience: 1 },
-    { name: "Java", rating: 6, experience: 1 },
-    { name: "Springboot", rating: 6, experience: 1 },
-    { name: "Python", rating: 7, experience: 2 },
-    { name: "AWS", rating: 6, experience: 1 },
-  ];
+  // const skills = [
+  //   { name: "Web Development", rating: 8, experience: 3 },
+  //   { name: "Node.js", rating: 8, experience: 2 },
+  //   { name: "Express.js", rating: 9, experience: 2 },
+  //   { name: "Typescript", rating: 9, experience: 2 },
+  //   { name: "Javascript", rating: 7, experience: 2 },
+  //   { name: "React", rating: 6, experience: 1 },
+  //   { name: "SQL", rating: 7, experience: 2 },
+  //   { name: "Oracle DB", rating: 8, experience: 1 },
+  //   { name: "Java", rating: 6, experience: 1 },
+  //   { name: "Springboot", rating: 6, experience: 1 },
+  //   { name: "Python", rating: 7, experience: 2 },
+  //   { name: "AWS", rating: 6, experience: 1 },
+  // ];
 
   return (
     <ThemeProvider theme={DarkTheme}>
@@ -36,13 +36,10 @@ export const Home = () => {
           px: { xs: 1, sm: 0 },
         }}
       >
-        <Typography variant="h4">Hi, Welcome to my cyber space!</Typography>
+        <p className={"text-4xl"}>welcome to my digital space!</p>
         <br />
-        <Typography variant="h3" align="justify">
-          I'm an experienced backend developer{" "}
-        </Typography>
 
-        <Box
+        {/* <Box
           display={"flex"}
           flexDirection={"row"}
           justifyContent={"space-between"}
@@ -67,11 +64,11 @@ export const Home = () => {
               <SkillBox skill={skill} key={index}></SkillBox>
             )
           )}
-        </Marquee>
+        </Marquee> */}
         <NavigateButton
           label="Let's connect"
           url="/connect"
-          textSize="2xl"
+          textSize="4xl"
         ></NavigateButton>
       </Paper>
     </ThemeProvider>

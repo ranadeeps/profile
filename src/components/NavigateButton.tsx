@@ -11,7 +11,7 @@ const NavigateButton = (props: {
     <button
       onClick={() => navigate(props.url)}
       className={
-        "bg-primary text-secondary hover:bg-primary-hover rounded-xl p-2"
+        "bg-primary text-secondary hover:bg-primary-hover rounded-full p-6"
       }
       style={{ width: "fit-content", cursor: "pointer" }}
     >
