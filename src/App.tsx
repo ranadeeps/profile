@@ -2,7 +2,7 @@ import { Box, Divider } from "@mui/material";
 import "./App.css";
 import { Home } from "./components/Home";
 import { Navbar } from "./components/Navbar";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Resume } from "./components/Resume";
@@ -34,7 +34,7 @@ function App() {
       display={"flex"}
       flexDirection={"column"}
       sx={{
-        width: { xs: "100%", sm: "100%", md: "80%", lg: "60%" },
+        width: { xs: "100%", sm: "100%", md: "80%", lg: "80%" },
         minHeight: "100vh",
         // backgroundImage: "url('/src/assets/bg_img.jpg')",
         // backgroundSize: "cover",
@@ -52,7 +52,10 @@ function App() {
           }}
         ></Divider>
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
+          <Route
+            path="/"
+            element={<Navigate to={"/home"} replace></Navigate>}
+          ></Route>
           <Route path="/home" element={<Home></Home>}></Route>
           <Route path="/experience" element={<Experience></Experience>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>

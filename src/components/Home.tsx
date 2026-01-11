@@ -37,7 +37,6 @@ export const Home = () => {
         }}
       >
         <p className={"text-4xl"}>welcome to my digital space!</p>
-        <br />
 
         {/* <Box
           display={"flex"}
@@ -65,11 +64,25 @@ export const Home = () => {
             )
           )}
         </Marquee> */}
-        <NavigateButton
-          label="Let's connect"
-          url="/connect"
-          textSize="4xl"
-        ></NavigateButton>
+        <div className="flex flex-col lg:flex-row gap-2 mb-1">
+          <div className="w-full lg:w-1/2 flex flex-col gap-2">
+            <p className="text-sm sm:text-xl lg:text-2xl">
+              👋🏻 I'm ranadeep reddy, a backend developer. I build backend for
+              fintech products.
+            </p>
+            <NavigateButton
+              label="Let's connect"
+              url="/connect"
+              className="text-base sm:text-2xl lg:text-4xl sm:place-self-center"
+            ></NavigateButton>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <img
+              src="https://ranadeepreddyshyamakura.info/mdms/profile/pp_1.webp"
+              className="rounded-2xl"
+            ></img>
+          </div>
+        </div>
       </Paper>
     </ThemeProvider>
   );
