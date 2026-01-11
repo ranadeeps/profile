@@ -18,7 +18,6 @@ export const Experience = () => {
           gap: 2,
           px: { xs: 1, sm: 0 },
           py: 1,
-          mt: 1,
         }}
       >
         <Box

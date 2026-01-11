@@ -66,7 +66,7 @@ export const Home = () => {
         </Marquee> */}
         <div className="flex flex-col lg:flex-row gap-2 mb-1">
           <div className="w-full lg:w-1/2 flex flex-col gap-2">
-            <p className="text-sm sm:text-xl lg:text-2xl">
+            <p className="text-sm sm:text-xl lg:text-2xl text-justify">
               👋🏻 I'm ranadeep reddy, a backend developer. I build backend for
               fintech products.
             </p>

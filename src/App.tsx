@@ -1,4 +1,4 @@
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 import "./App.css";
 import { Home } from "./components/Home";
 import { Navbar } from "./components/Navbar";
@@ -44,13 +44,6 @@ function App() {
       <BrowserRouter>
         <Navbar></Navbar>
 
-        <Divider
-          sx={{
-            color: "primary.main",
-            border: 1,
-            borderWidth: 5,
-          }}
-        ></Divider>
         <Routes>
           <Route
             path="/"
