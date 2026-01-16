@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import { SkillPage } from "./components/SkillPage";
 import { Connect } from "./components/Connect";
 import { VisitorAnalytics } from "./components/VisitorAnalytics";
-
 function App() {
   const create_log = async () => {
     try {
@@ -36,8 +35,6 @@ function App() {
       sx={{
         width: { xs: "100%", sm: "100%", md: "80%", lg: "80%" },
         minHeight: "100vh",
-        // backgroundImage: "url('/src/assets/bg_img.jpg')",
-        // backgroundSize: "cover",
       }}
       margin={"auto"}
     >

@@ -1,9 +1,25 @@
 import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../Themes";
-import { Box, Divider, Paper } from "@mui/material";
+import { Box, Chip, Divider, Paper } from "@mui/material";
 import { CompanyCard } from "./CompanyCard";
 
 export const Experience = () => {
+  const skills = [
+    "Node JS",
+    "Typescript",
+    "SQL",
+    "Python",
+    "Javascript",
+    "Java",
+    "Express JS",
+    "AWS",
+    "Linux",
+    "Springboot",
+    "Oracle DB",
+    "Redis",
+    "PostgreSQL",
+    "React JS",
+  ];
   return (
     <ThemeProvider theme={DarkTheme}>
       <Paper
@@ -49,6 +65,20 @@ export const Experience = () => {
             period="Jun, 2022 - Dec, 2023"
           />
         </Box>
+        <div className="rounded-xl border-1 border-primary p-2">
+          <p className="text-2xl">My Skills</p>
+          <div className="flex flex-row flex-wrap gap-2 mt-2">
+            {skills.map((skill: string, index: number) => (
+              <Chip
+                label={skill}
+                color="primary"
+                variant="outlined"
+                key={index}
+                size="medium"
+              ></Chip>
+            ))}
+          </div>
+        </div>
       </Paper>
     </ThemeProvider>
   );
