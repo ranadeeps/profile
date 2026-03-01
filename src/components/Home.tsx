@@ -75,6 +75,16 @@ export const Home = () => {
               url="/connect"
               className="text-base sm:text-2xl lg:text-4xl sm:place-self-center"
             ></NavigateButton>
+            <div>
+              <p className="text-3xl">Services:</p>
+              <ul className="list-disc list-inside">
+                <li className="text-xl">Web Development</li>
+                <li className="text-xl">Backend Development</li>
+                <li className="text-xl">Frontend UI</li>
+                <li className="text-xl">Application Setup</li>
+                <li className="text-xl">Database Development</li>
+              </ul>
+            </div>
           </div>
           <div className="w-full lg:w-1/2">
             <img
