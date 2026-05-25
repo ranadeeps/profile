@@ -88,7 +88,7 @@ export const Home = () => {
           </div>
           <div className="w-full lg:w-1/2">
             <img
-              src="https://ranadeepreddyshyamakura.info/mdms/profile/pp_1.webp"
+              src="https://ranadeepreddyshyamakura.info/mdms/pp_1.webp"
               className="rounded-2xl"
             ></img>
           </div>
