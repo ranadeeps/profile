@@ -59,10 +59,10 @@ export const SkillPage = () => {
           {skills.map(
             (
               skill: { name: string; rating: number; experience: number },
-              index: number
+              index: number,
             ) => (
               <SkillBox skill={skill} key={index}></SkillBox>
-            )
+            ),
           )}
         </Box>
       </Paper>

@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { SkillPage } from "./components/SkillPage";
 import { Connect } from "./components/Connect";
 import { VisitorAnalytics } from "./components/VisitorAnalytics";
+import UploadPage from "./components/UploadPage";
 function App() {
   const create_log = async () => {
     try {
@@ -52,6 +53,8 @@ function App() {
           <Route path="/resume" element={<Resume></Resume>}></Route>
           <Route path="/skills" element={<SkillPage></SkillPage>}></Route>
           <Route path="/connect" element={<Connect></Connect>}></Route>
+          <Route path="/upload" element={<UploadPage></UploadPage>}></Route>
+
           <Route
             path="/visitor-analytics"
             element={<VisitorAnalytics></VisitorAnalytics>}

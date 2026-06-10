@@ -14,15 +14,5 @@ export const DarkTheme = createTheme({
       secondary: "#242124",
     },
   },
-  components: {
-    MuiButton: {
-      styleOverrides: { root: { color: "white", fontFamily: "monospace" } },
-    },
-    MuiTypography: {
-      styleOverrides: {
-        root: { fontFamily: "monospace" },
-      },
-    },
-  },
 });
 export const LightTheme = createTheme({ palette: { mode: "light" } });

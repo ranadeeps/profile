@@ -22,7 +22,11 @@ export const CustomButton = (props: {
           <Typography>{props.label}</Typography>
         </button>
       ) : props.type ? (
-        <button type={props.type} style={{ cursor: "pointer" }}>
+        <button
+          type={props.type}
+          style={{ cursor: "pointer" }}
+          className="border-1 rounded-xs p-2 hover:bg-primary hover:text-secondary"
+        >
           <Typography>{props.label}</Typography>
         </button>
       ) : (
