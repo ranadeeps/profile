@@ -15,7 +15,7 @@ export const Resume = () => {
     // This effect runs once after the component mounts
     // and triggers a redirect to the specified URL.
     window.location.replace(
-      "https://ranadeepreddyshyamakura.info/mdms/ranadeep_cv.pdf"
+      "https://ranadeepreddyshyamakura.info/api/profile/view-resume",
     );
   }, []);
   return (
