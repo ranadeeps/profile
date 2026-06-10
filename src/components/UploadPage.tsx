@@ -46,7 +46,7 @@ const UploadPage = () => {
         setFileType("");
         formElement.reset();
       } else {
-        alert(`File upload failed ${response.text()}`);
+        alert(`File upload failed ${(await response.json()).message}`);
       }
     } catch (error) {
       console.error("Submission error:", error);
