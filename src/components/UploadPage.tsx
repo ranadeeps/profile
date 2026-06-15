@@ -114,6 +114,13 @@ const UploadPage = () => {
             onChange={handleChange}
             required
             name="file"
+            sx={{
+              "& span.MuiFileInput-placeholder": {
+                color: "#4CAF50 !important",
+                cursor: "pointer !important",
+                px: 2,
+              },
+            }}
           ></MuiFileInput>
           <button
             type="submit"
