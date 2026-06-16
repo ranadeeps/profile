@@ -9,6 +9,15 @@ import {
 } from "@mui/material";
 import React, { type FormEvent } from "react";
 import { MuiFileInput } from "mui-file-input";
+import CloseIcon from "@mui/icons-material/Close";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
+
+<MuiFileInput
+  clearIconButtonProps={{
+    title: "Remove",
+    children: <CloseIcon fontSize="small" />,
+  }}
+/>;
 const UploadPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
   const [fileType, setFileType] = React.useState("");
@@ -72,7 +81,7 @@ const UploadPage = () => {
       <div className="w-1/2 mx-auto">
         <form
           id="upload-form"
-          className="flex flex-col gap-2"
+          className="flex flex-col gap-3"
           onSubmit={onSubmit}
         >
           <div className="flex flex-row gap-2">
@@ -88,7 +97,14 @@ const UploadPage = () => {
             ></input>
           </div>
           <div className="w-full">
-            <FormControl sx={{ width: "100%" }}>
+            <FormControl
+              sx={{
+                width: "100%",
+                "& .MuiInputBase-root .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "primary.main",
+                },
+              }}
+            >
               <InputLabel
                 id="demo-simple-select-label"
                 sx={{ color: "text.primary" }}
@@ -103,6 +119,7 @@ const UploadPage = () => {
                 onChange={handleFileTypeChange}
                 required
                 name="fileType"
+                sx={{ "& .MuiSvgIcon-root": { color: "primary.main" } }}
               >
                 <MenuItem value={"resume"}>Resume</MenuItem>
               </Select>
@@ -115,11 +132,23 @@ const UploadPage = () => {
             required
             name="file"
             sx={{
-              "& span.MuiFileInput-placeholder": {
+              "& .MuiFileInput-placeholder": {
                 color: "#4CAF50 !important",
                 cursor: "pointer !important",
-                px: 2,
               },
+              "& .MuiInputBase-root .MuiOutlinedInput-notchedOutline": {
+                borderColor: "primary.main",
+              },
+              "& .MuiInputAdornment-root": {
+                color: "primary.main",
+              },
+            }}
+            clearIconButtonProps={{
+              title: "Remove",
+              children: <CloseIcon fontSize="small" color="primary" />,
+            }}
+            slotProps={{
+              input: { startAdornment: <AttachFileIcon color="primary" /> },
             }}
           ></MuiFileInput>
           <button
