@@ -1,7 +1,7 @@
 import axios from "axios";
-
+export const baseURL = "https://ranadeepreddyshyamakura.info/api";
 const api = axios.create({
-  baseURL: "https://ranadeepreddyshyamakura.info/api", // Replace with your backend API
+  baseURL: baseURL, // Replace with your backend API
   headers: {
     "Content-Type": "application/json",
   },
@@ -15,7 +15,7 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
 export default api;

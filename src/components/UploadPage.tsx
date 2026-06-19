@@ -1,26 +1,42 @@
 import {
   FormControl,
   InputLabel,
+  Link,
   MenuItem,
+  Pagination,
   Paper,
   Select,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
   Typography,
   type SelectChangeEvent,
 } from "@mui/material";
-import React, { type FormEvent } from "react";
+import React, { useEffect, type FormEvent } from "react";
 import { MuiFileInput } from "mui-file-input";
 import CloseIcon from "@mui/icons-material/Close";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
-
-<MuiFileInput
-  clearIconButtonProps={{
-    title: "Remove",
-    children: <CloseIcon fontSize="small" />,
-  }}
-/>;
+import { baseURL } from "../utils/api";
+import dayjs from "dayjs";
+import prettyBytes from "pretty-bytes";
+interface file {
+  id: number;
+  originalFileName: string;
+  mimeType: string;
+  fileSizeInBytes: number;
+  fileType: string;
+  createdAt: string;
+}
 const UploadPage = () => {
   const [file, setFile] = React.useState<File | null>(null);
   const [fileType, setFileType] = React.useState("");
+  const [files, setFiles] = React.useState<file[]>([]);
+  const [isLoading, setLoading] = React.useState<boolean>(true);
+  const [page, setPage] = React.useState<number>(1);
+  const [totalPages, setTotalPages] = React.useState<number>(1);
 
   const handleFileTypeChange = (event: SelectChangeEvent) => {
     setFileType(event.target.value as string);
@@ -42,13 +58,10 @@ const UploadPage = () => {
     formData.append("password", password);
 
     try {
-      const response = await fetch(
-        "https://ranadeepreddyshyamakura.info/api/profile/upload-file",
-        {
-          method: "POST",
-          body: formData,
-        },
-      );
+      const response = await fetch(`${baseURL}/profile/upload-file`, {
+        method: "POST",
+        body: formData,
+      });
       if (response.ok) {
         alert("Form submitted successfully!");
         setFile(null);
@@ -59,8 +72,34 @@ const UploadPage = () => {
       }
     } catch (error) {
       console.error("Submission error:", error);
+      alert("something went wrong");
     }
   };
+
+  const getFiles = async () => {
+    try {
+      const response = await fetch(`${baseURL}/files?page=${page}&limit=5`, {
+        method: "GET",
+      });
+      if (response.ok) {
+        const responseBody: {
+          files: file[];
+          total: number;
+          limit: number;
+          page: number;
+          totalPages: number;
+        } = await response.json();
+        setFiles(responseBody.files);
+        setTotalPages(responseBody.totalPages);
+      }
+    } catch (error) {
+      alert("something went wrong");
+    }
+    setLoading(false);
+  };
+  useEffect(() => {
+    getFiles();
+  }, [page]);
   return (
     <Paper
       elevation={0}
@@ -158,6 +197,73 @@ const UploadPage = () => {
             Submit
           </button>
         </form>
+      </div>
+      <div className="w-3/4 mx-auto m-2 h-max">
+        {!isLoading && (
+          <TableContainer component={Paper} elevation={0} sx={{ border: 1 }}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow
+                  sx={{
+                    "& .MuiTableCell-root": {
+                      fontSize: "medium",
+                      fontWeight: "bold",
+                    },
+                  }}
+                >
+                  <TableCell>Name</TableCell>
+                  <TableCell align="right">Size</TableCell>
+                  <TableCell align="right">Date created</TableCell>
+                  <TableCell align="right">Actions</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {files.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.originalFileName}
+                    </TableCell>
+                    <TableCell align="right">
+                      {prettyBytes(row.fileSizeInBytes)}
+                    </TableCell>
+                    <TableCell align="right">
+                      {dayjs(row.createdAt).format("DD-MMM-YYYY")}
+                    </TableCell>
+                    <TableCell align="right">
+                      {" "}
+                      <Link
+                        href={`${baseURL}/files/view-file/${row.id}`}
+                        sx={{ cursor: "pointer" }}
+                      >
+                        View
+                      </Link>{" "}
+                      /{" "}
+                      <Link
+                        href={`${baseURL}/files/download-file/${row.id}`}
+                        sx={{ cursor: "pointer" }}
+                      >
+                        Download
+                      </Link>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+      </div>
+      <div className="mx-auto my-2">
+        {!isLoading && (
+          <Pagination
+            count={totalPages}
+            variant="outlined"
+            shape="rounded"
+            onChange={(_, page) => setPage(page)}
+          />
+        )}
       </div>
     </Paper>
   );
