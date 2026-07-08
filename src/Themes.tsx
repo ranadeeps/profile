@@ -1,18 +1,21 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-export const DarkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    background: {
-      default: "#242124", // page background
-      paper: "#242124", // surfaces like AppBar, Cards, etc.
+export const DarkTheme = responsiveFontSizes(
+  createTheme({
+    palette: {
+      mode: "dark",
+      background: {
+        default: "#242124", // page background
+        paper: "#242124", // surfaces like AppBar, Cards, etc.
+      },
+      primary: { main: "#4CAF50" },
+      secondary: { main: "#242124" },
+      text: {
+        primary: "#4CAF50",
+        secondary: "#242124",
+      },
     },
-    primary: { main: "#4CAF50" },
-    secondary: { main: "#242124" },
-    text: {
-      primary: "#4CAF50",
-      secondary: "#242124",
-    },
-  },
-});
+  }),
+);
+
 export const LightTheme = createTheme({ palette: { mode: "light" } });

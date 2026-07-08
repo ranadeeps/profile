@@ -17,10 +17,7 @@ export const CompanyCard: React.FC<{
     xl: "1rem", // large screen
   };
   const bull = (
-    <Box
-      component="span"
-      sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-    >
+    <Box component="span" sx={{ mx: "2px", transform: "scale(0.8)" }}>
       •
     </Box>
   );
